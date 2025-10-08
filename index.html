@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Kelas IX-D</title>
+    <title>Website - IX-D</title>
     <style>
         * {
             margin: 0;
@@ -563,9 +563,115 @@
             background: rgba(94, 53, 177, 0.2);
             transform: translateY(-2px);
         }
+
+        /* Welcome Popup */
+        .welcome-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.5s;
+        }
+
+        .welcome-popup {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: slideUp 0.5s;
+            position: relative;
+        }
+
+        .welcome-logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgdmlld0JveD0iMCAwIDUwMCA1MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIiBmaWxsPSIjRjVFNkQ4Ii8+CjxjaXJjbGUgY3g9IjI1MCIgY3k9IjE0MCIgcj0iODAiIHN0cm9rZT0iIzMzMyIgc3Ryb2tlLXdpZHRoPSI0IiBmaWxsPSJub25lIi8+CjxsaW5lIHgxPSIyNTAiIHkxPSI2MCIgeDI9IjI1MCIgeTI9IjIyMCIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjIiLz4KPGxpbmUgeDE9IjE3MCIgeTE9IjE0MCIgeDI9IjMzMCIgeTI9IjE0MCIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjIiLz4KPGxpbmUgeDE9IjE5MCIgeTE9IjkwIiB4Mj0iMzEwIiB5Mj0iMTkwIiBzdHJva2U9IiMzMzMiIHN0cm9rZS13aWR0aD0iMiIvPgo8bGluZSB4MT0iMzEwIiB5MT0iOTAiIHgyPSIxOTAiIHkyPSIxOTAiIHN0cm9rZT0iIzMzMyIgc3Ryb2tlLXdpZHRoPSIyIi8+Cjx0ZXh0IHg9IjI1MCIgeT0iMjkwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSJib2xkIiBmb250LXNpemU9IjcwIiBmaWxsPSIjMzMzIj5OSU5FIC0gRDwvdGV4dD4KPHBhdGggZD0iTSAxMDAgMzYwIFEgMjUwIDMzMCA0MDAgMzYwIiBzdHJva2U9IiMzMzMiIHN0cm9rZS13aWR0aD0iNiIgZmlsbD0iIzMzMyIvPgo8dGV4dCB4PSIyNTAiIHk9IjM5NSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjI4IiBmaWxsPSJ3aGl0ZSI+MjAyNSAtMjAyNjwvdGV4dD4KPGNpcmNsZSBjeD0iMjA1IiBjeT0iNDMwIiByPSI4IiBmaWxsPSIjMzMzIi8+CjxjaXJjbGUgY3g9IjI1MCIgY3k9IjQzMCIgcj0iOCIgZmlsbD0iIzMzMyIvPgo8Y2lyY2xlIGN4PSIyOTUiIGN5PSI0MzAiIHI9IjgiIGZpbGw9IiMzMzMiLz4KPHRleHQgeD0iMjUwIiB5PSI1MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4IiBmaWxsPSIjMzMzIj5NVUhBTU1BRElZQUggU0NIT09MPC90ZXh0Pgo8L3N2Zz4=');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            border-radius: 50%;
+            border: 4px solid #667eea;
+            animation: pulse 2s infinite;
+        }
+
+        .welcome-popup h2 {
+            color: #667eea;
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .welcome-popup p {
+            color: #666;
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .welcome-btn {
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .welcome-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hidden {
+            display: none !important;
+        }
     </style>
 </head>
 <body>
+    <!-- Welcome Popup -->
+    <div class="welcome-overlay" id="welcomeOverlay">
+        <div class="welcome-popup">
+            <div class="welcome-logo"></div>
+            <h2>Selamat Datang! 🎉</h2>
+            <p>
+                <strong>Website Kelas IX-D</strong><br>
+                SMP Muhammadiyah 21<br>
+                Tahun Ajaran 2024/2025
+            </p>
+            <p style="font-size: 16px; color: #999;">
+                Portal informasi lengkap untuk kegiatan, struktur kelas,<br>
+                jadwal pelajaran, dan galeri kelas kami
+            </p>
+            <button class="welcome-btn" onclick="closeWelcome()">
+                Masuk ke Website ✨
+            </button>
+        </div>
+    </div>
+
     <div id="publicPage" class="container">
         <header>
             <div class="hamburger-menu">
@@ -862,9 +968,9 @@
                 <p style="text-align: center; color: #666; margin-bottom: 30px;">Dokumentasi kegiatan dan momen berharga kelas kami</p>
                 <div class="gallery" id="galleryList">
                     <div class="gallery-item">
-                        <img src="https://i.ibb.co.com/mCqXyY5b/IMG-20251008-WA0031.jpg" alt="Kegiatan Belajar">
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=500&h=500&fit=crop" alt="Kegiatan Belajar">
                         <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.7)); color: white; padding: 15px; font-weight: bold;">
-                            Upacara 17 Agustus
+                            📚 Kegiatan Belajar
                         </div>
                     </div>
                     <div class="gallery-item">
@@ -922,12 +1028,12 @@
         <div class="footer">
             <p>© 2024 Kelas IX-D - SMP Muhammadiyah 21</p>
             <div class="creator-info">
-                <p style="margin-bottom: 5px;">👨‍💻 <strong>Created by:</strong> Daffa Haziq</p>
+                <p style="margin-bottom: 5px;">👨‍💻 <strong>Created by:</strong> [Nama Creator Anda]</p>
                 <div class="social-links">
-                    <a href="https://instagram.com/daffsxy24" target="_blank">📷 Instagram</a>
-                    <a href="https://github.com/dafzx-maker" target="_blank">💻 GitHub</a>
+                    <a href="https://instagram.com/username" target="_blank">📷 Instagram</a>
+                    <a href="https://github.com/username" target="_blank">💻 GitHub</a>
                     <a href="https://twitter.com/username" target="_blank">🐦 Twitter</a>
-                    <a href="mailto:mahendradaffa53@gmail.com">📧 Email</a>
+                    <a href="mailto:email@example.com">📧 Email</a>
                 </div>
             </div>
         </div>
@@ -1019,9 +1125,28 @@
             const urlParams = new URLSearchParams(window.location.search);
             if (urlParams.get('admin') === 'true') {
                 showAdminPage();
+                closeWelcome(); // Langsung tutup welcome jika admin
             }
             loadGalleryData();
         };
+
+        function closeWelcome() {
+            const overlay = document.getElementById('welcomeOverlay');
+            overlay.style.animation = 'fadeOut 0.5s';
+            setTimeout(() => {
+                overlay.classList.add('hidden');
+            }, 500);
+        }
+
+        // Add fadeOut animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeOut {
+                from { opacity: 1; }
+                to { opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
 
         function loadGalleryData() {
             // Load gambar yang sudah ada di halaman public
@@ -1185,39 +1310,50 @@
         }
 
         function addGaleri() {
-            const url = document.getElementById('urlGambar').value;
-            const caption = document.getElementById('captionGambar').value;
+            const url = document.getElementById('urlGambar').value.trim();
+            const caption = document.getElementById('captionGambar').value.trim();
 
             if (!url || !caption) {
                 alert('Mohon isi URL gambar dan caption!');
                 return;
             }
 
-            // Tambah ke data
-            galleryData.push({
-                id: galleryData.length,
-                url: url,
-                caption: caption
-            });
+            // Validasi URL
+            if (!url.startsWith('http://') && !url.startsWith('https://')) {
+                alert('URL harus dimulai dengan http:// atau https://');
+                return;
+            }
 
-            // Update galeri public
+            // Tambah ke galeri public
             const galleryList = document.getElementById('galleryList');
             const item = document.createElement('div');
             item.className = 'gallery-item';
             item.innerHTML = `
-                <img src="${url}" alt="${caption}">
+                <img src="${url}" alt="${caption}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div style="display: none; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: #f0f0f0; align-items: center; justify-content: center; color: #999;">
+                    ❌ Gambar gagal dimuat
+                </div>
                 <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.7)); color: white; padding: 15px; font-weight: bold;">
                     ${caption}
                 </div>
             `;
             galleryList.appendChild(item);
 
-            // Update admin gallery
+            // Tambah ke data array
+            galleryData.push({
+                id: galleryData.length,
+                url: url,
+                caption: caption
+            });
+
+            // Update admin gallery list
             updateAdminGallery();
 
+            // Clear input
             document.getElementById('urlGambar').value = '';
             document.getElementById('captionGambar').value = '';
-            alert('Gambar berhasil ditambahkan!');
+            
+            alert('Gambar berhasil ditambahkan ke galeri!');
         }
 
         function editGaleri(index) {
